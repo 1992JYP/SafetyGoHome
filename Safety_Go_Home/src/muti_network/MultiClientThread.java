@@ -1,7 +1,5 @@
 package muti_network;
 
-import java.awt.Font;
-import java.util.Scanner;
 
 public class MultiClientThread extends Thread{
     private MultiClient mc;

@@ -12,17 +12,17 @@ public class MainFunction {
 		_dto=dto;
 	}
 	
-	public I_Function getFunc() {
-		return _func;
-	}
+//	public I_Function getFunc() {
+//		return _func;
+//	}
 	
-	public String changeType(String type) {
+	public int changeType(int type) {
 		if(_dto.isLogined()) {	//검사 해야하는가 의문은 있음
 			_dto.setType(type);
 		}
 		return _dto.getType();
 	}
-	public String getType() {
+	public int getType() {
 		return _dto.getType();
 	}
 	
@@ -32,7 +32,7 @@ public class MainFunction {
 	}
 
 	public String getName() {
-		return _func.getName();
+		return _dto.getName();
 	}
 
 	public String start() {

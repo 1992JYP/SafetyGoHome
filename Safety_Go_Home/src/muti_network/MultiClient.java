@@ -22,11 +22,12 @@ public class MultiClient implements ActionListener {
    private JButton jbtn, jbtn1 , jexit;//전송버튼이랑 로그인 종료 버튼이에요
    public boolean changepower = false;
    public boolean saypower = false;
-   private boolean login = false;
+//   private boolean login = false;
 
    Image img = new ImageIcon("C:\\Users\\SM000004\\Desktop\\JYP\\1차 프로젝트\\이미지\\다운로드.").getImage();
 
-   public MultiClient() {
+   @SuppressWarnings({ "serial", "static-access", "unused" })
+public MultiClient() {
       /*ip = argIp;
       id = argId;*/
       jframe = new JFrame("Multi Chatting");

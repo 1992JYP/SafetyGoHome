@@ -12,11 +12,8 @@ public interface I_Function {
 //	메인 테스트에서 while문을 쓸 예정이라
 //	로그인 되어있는지 계속 확인할거임
 	
-	public String getType();	
+	public int getType();	
 //	접속자 타입 표시용
-	
-	public String getName();	
-//	~~~님 환영합니다
 	
 	public void updateInfo(String id, String pw);
 //	접속자 정보 수정

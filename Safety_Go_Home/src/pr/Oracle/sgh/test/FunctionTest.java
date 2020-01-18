@@ -18,12 +18,12 @@ public class FunctionTest {
 	
 	@Test
 	public void test() {
-		MemberDTO user = new MemberDTO("test", true, "user");
+		MemberDTO user = new MemberDTO("test", true, 1,"이름");
 		MainFunction function = new MainFunction(new UserFunction(), user);
-		assertEquals("user", function.getType());
+		assertEquals(1, function.getType());
 		assertEquals("test",function.getId());
-		assertEquals("viewer", function.changeType("viewer"));
-		assertEquals("유저이름",function.getName())	;
+		assertEquals(2, function.changeType(2));
+		assertEquals("이름",function.getName())	;
 		assertEquals("start", function.start());
 		assertEquals("라이언 chat start",function.startChat());
 		assertEquals("라이언",function.getNick());

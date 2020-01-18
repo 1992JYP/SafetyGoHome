@@ -20,15 +20,10 @@ public class UserFunction implements I_Function {
 		return user.isLogined();
 	}
 
-	@Override
-	public String getType() {
+	public int getType() {
 		return user.getType();
 	}
 
-	@Override
-	public String getName() {
-		return userInfo[0];
-	}
 
 	@Override
 	public void updateInfo(String id, String pw) {

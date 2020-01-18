@@ -9,11 +9,11 @@ import pr.Oracle.sgh.service.UserFunction;
 public class testMain {
 
 	public static void main(String[] args) {
-		MemberDTO user = new MemberDTO("test", true, "user");
+		MemberDTO user = new MemberDTO("test", true, 1,"이름");
 		MainFunction function = new MainFunction(new UserFunction(), user);
 		System.out.println("현재 타입 : " + function.getType());
 		System.out.println("현재 id : " + function.getId());
-		function.changeType("viewer");
+		function.changeType(2);
 		System.out.println("타입 바꿈 : " + function.getType());
 		System.out.println("현재 이름 : " + function.getName());
 		System.out.println("귀가프로그램 " + function.start());

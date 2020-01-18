@@ -21,6 +21,7 @@ public class MultiServer {
 			Thread t = new Thread(mst);
 			t.start();
 		}
+		serverSocket.close();
 	}
 	
 	public void Ddos(){

@@ -58,6 +58,8 @@ public class MainFunction {
 	public Object getNick() {
 		return _func.getNick();
 	}
+
+
 	
 	
 }

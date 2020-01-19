@@ -5,6 +5,10 @@ import java.sql.SQLException;
 
 public class MemberDAO extends BaseDAO {
 
+	
+	
+	
+	
 	public int join(String id, String pw, String name, String registerNum, String gender, String phoneNum, int type) {
 
 		String id_check = checkId(id);
@@ -48,7 +52,7 @@ public class MemberDAO extends BaseDAO {
 
 	}
 
-	private String checkPhoneNum(String phoneNum) {
+	public String checkPhoneNum(String phoneNum) {
 		getConnect();
 		String phoneNum_check = "";
 		String sql = "SELECT PHONE_NUM FROM MEMBER WHERE PHONE_NUM = ?";
@@ -73,7 +77,7 @@ public class MemberDAO extends BaseDAO {
 
 	}
 
-	private String checkregisterNum(String registerNum) {
+	public String checkregisterNum(String registerNum) {
 
 		getConnect();
 		String registerNum_check = "";
@@ -99,7 +103,7 @@ public class MemberDAO extends BaseDAO {
 
 	}
 
-	private String checkId(String id) {
+	public String checkId(String id) {
 
 		getConnect();
 		String id_check = "";
@@ -267,5 +271,33 @@ public class MemberDAO extends BaseDAO {
 		}
 		System.out.println("로그아웃 완료");
 	}
+
+	public int phoneNumUpdate(String phoneNum, String pw) {
+
+		getConnect();
+		int cnt = 0;
+
+		String sql = "update member set phone_num =? where member_pw=?";
+
+		try {
+
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, phoneNum);
+			ps.setString(2, pw);
+			cnt = ps.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			disConnect();
+		}
+
+		return cnt;
+
+	}
+
+	
+//	public String getPhoneNum()
 
 }

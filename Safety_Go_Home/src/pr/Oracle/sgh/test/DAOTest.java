@@ -30,6 +30,10 @@ public class DAOTest {
 		assertEquals(0, dao.TypeUpdate("jyp", 25));
 		MemberDTO user = dao.Login("jyp", "jyp");
 		assertTrue(user.isLogined());
+		assertEquals(1, dao.phoneNumUpdate("010-6413-6746", "jyp"));
+		
+		
+		
 		dao.logout("jyp");
 		dao.disConnect();
 	}

@@ -34,6 +34,7 @@ public interface I_Function {
 	public void setNick();
 
 	public Object getNick();
+
 	
 //	실질적인 안내 프로그램은 상속받은 클래스에서 작성
 }

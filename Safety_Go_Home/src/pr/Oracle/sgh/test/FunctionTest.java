@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import pr.Oracle.sgh.model.MemberDAO;
 import pr.Oracle.sgh.model.MemberDTO;
 import pr.Oracle.sgh.service.MainFunction;
 import pr.Oracle.sgh.service.UserFunction;
@@ -18,7 +19,8 @@ public class FunctionTest {
 	
 	@Test
 	public void test() {
-		MemberDTO user = new MemberDTO("test", true, 1,"¿Ã∏ß");
+		MemberDAO dao = new MemberDAO();
+		MemberDTO user = dao.Login("jyp", "jyp");
 		MainFunction function = new MainFunction(new UserFunction(), user);
 		assertEquals(1, function.getType());
 		assertEquals("test",function.getId());

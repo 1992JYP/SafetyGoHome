@@ -7,7 +7,8 @@ import pr.Oracle.sgh.model.MemberDTO;
 public class UserFunction implements I_Function {
 
 	public MemberDTO user;
-
+	
+	
 //	DTO에 있다 치고
 
 	public String[] userInfo = { "유저이름", "유저비밀번호" };

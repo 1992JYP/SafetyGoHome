@@ -46,18 +46,18 @@ public class HelloWorld extends MapView {
         });
     }
 
-    public static void main(String[] args) {
-
-        MapViewOptions options = new MapViewOptions();
-        options.importPlaces();
-        options.setApiKey("AIzaSyCmPGyPDj5ZmiCKPmtOQEkR2D_lP6eB6Vo");
-        final HelloWorld mapView = new HelloWorld(options);
-        JFrame frame = new JFrame("JxMaps - Hello, World!");
-
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.add(mapView, BorderLayout.CENTER);
-        frame.setSize(700, 500);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
+//    public static void main(String[] args) {
+//
+//        MapViewOptions options = new MapViewOptions();
+//        options.importPlaces();
+//        options.setApiKey("AIzaSyCmPGyPDj5ZmiCKPmtOQEkR2D_lP6eB6Vo");
+//        final HelloWorld mapView = new HelloWorld(options);
+//        JFrame frame = new JFrame("JxMaps - Hello, World!");
+//
+//        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        frame.add(mapView, BorderLayout.CENTER);
+//        frame.setSize(700, 500);
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//    }
 }

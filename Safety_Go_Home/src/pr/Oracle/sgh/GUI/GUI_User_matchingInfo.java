@@ -6,6 +6,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import pr.Oracle.sgh.test.GUITest;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -14,18 +17,26 @@ import java.awt.Panel;
 
 public class GUI_User_matchingInfo extends JFrame {
 	public GUI_User_matchingInfo() {
+		setBounds(100, 100, GUITest.SCREEN_WIDTH,GUITest.SCREEN_HEIGHT);
+		setTitle("프로그램");
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		
 		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setLayout(null);
 		panel.setBackground(new Color(25, 25, 112));
-		panel.setBounds(14, 12, 472, 657);
+		panel.setBounds(0, 0, 472, 657);
 		getContentPane().add(panel);
+		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(14, 12, 442, 633);
+		panel_1.setBounds(14, 14, 444, 630);
 		panel.add(panel_1);
 		
 		JLabel lbl_accompany = new JLabel("\uB3D9\uD589\uD560 \uCE5C\uAD6C\uB4E4");
@@ -104,6 +115,10 @@ public class GUI_User_matchingInfo extends JFrame {
 		panel_1.add(lbl_watching_start);
 		
 		JButton btn_match_finish = new JButton("\uB9CC\uB0AC\uC5B4\uC694!");
+		btn_match_finish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_match_finish.setBounds(64, 572, 96, 34);
 		panel_1.add(btn_match_finish);
 		btn_match_finish.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));

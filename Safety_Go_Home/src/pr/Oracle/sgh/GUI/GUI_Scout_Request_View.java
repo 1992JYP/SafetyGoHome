@@ -6,6 +6,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import pr.Oracle.sgh.test.GUITest;
+
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -23,20 +26,27 @@ public class GUI_Scout_Request_View extends JFrame {
 	private JTextField txtfd_startSpot;
 	private JTextField txtfd_goalSpot;
 	public GUI_Scout_Request_View() {
+		setBounds(100, 100, GUITest.SCREEN_WIDTH,GUITest.SCREEN_HEIGHT);
+		setTitle("프로그램");
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		
 		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setLayout(null);
 		panel.setBackground(new Color(25, 25, 112));
-		panel.setBounds(14, 12, 472, 657);
+		panel.setBounds(0, 0, 472, 657);
 		getContentPane().add(panel);
+		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(14, 12, 442, 633);
+		panel_1.setBounds(14, 14, 444, 630);
 		panel.add(panel_1);
-		
 		JLabel label = new JLabel("\uB3D9\uD589\uC694\uCCAD\uC11C");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setForeground(new Color(72, 61, 139));

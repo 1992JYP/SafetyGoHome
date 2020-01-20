@@ -23,13 +23,12 @@ public class MultiServer {
 		}
 		serverSocket.close();
 	}
-	
-	public void Ddos(){
+
+	public void Ddos() {
 		System.exit(0);
 	}
-	
 
-	public ArrayList<MultiServerThread> getList(){
+	public ArrayList<MultiServerThread> getList() {
 		return list;
 	}
 

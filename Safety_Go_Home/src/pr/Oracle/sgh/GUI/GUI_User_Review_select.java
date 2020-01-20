@@ -6,27 +6,40 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import pr.Oracle.sgh.test.GUITest;
+
 import java.awt.Panel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import java.awt.TextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_User_Review_select extends JFrame {
 	public GUI_User_Review_select() {
+		setBounds(100, 100, GUITest.SCREEN_WIDTH,GUITest.SCREEN_HEIGHT);
+		setTitle("프로그램");
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		
 		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setLayout(null);
 		panel.setBackground(new Color(25, 25, 112));
-		panel.setBounds(14, 12, 472, 657);
+		panel.setBounds(0, 0, 472, 657);
 		getContentPane().add(panel);
+		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(14, 12, 442, 633);
+		panel_1.setBounds(14, 14, 444, 630);
 		panel.add(panel_1);
 		
 		JLabel lbl_accompany = new JLabel("\uB3D9\uD589\uD55C \uCC9C\uC0AC\uB4E4");
@@ -93,6 +106,10 @@ public class GUI_User_Review_select extends JFrame {
 		panel_2.add(lbl_grade_watcher);
 		
 		JButton btn_review_scout1 = new JButton("\uD6C4\uAE30\uB4F1\uB85D");
+		btn_review_scout1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_review_scout1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		btn_review_scout1.setBackground(new Color(123, 104, 238));
 		btn_review_scout1.setBounds(187, 68, 85, 34);
@@ -111,6 +128,10 @@ public class GUI_User_Review_select extends JFrame {
 		panel_2.add(btn_review_watcher);
 		
 		JButton btn_danger = new JButton("\uC2E0\uACE0\uD558\uAE30");
+		btn_danger.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_danger.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		btn_danger.setBackground(new Color(123, 104, 238));
 		btn_danger.setBounds(168, 570, 85, 34);

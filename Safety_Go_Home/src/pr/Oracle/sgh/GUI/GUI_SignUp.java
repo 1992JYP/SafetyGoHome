@@ -36,9 +36,9 @@ public class GUI_SignUp extends JFrame {
 	private MemberDAO dao = new MemberDAO();
 	private boolean nameCheck = false;
 	private boolean idCheck = false;
-	public GUI_SignUp() {		
-		
-		
+
+	public GUI_SignUp() {
+
 		setTitle("프로그램");
 		setSize(GUITest.SCREEN_WIDTH, GUITest.SCREEN_HEIGHT);
 		setResizable(false);
@@ -228,24 +228,24 @@ public class GUI_SignUp extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String gender = null;
 				int type = 0;
-				if(radioBtn_Female.isEnabled()) {
-					gender ="F";
+				if (radioBtn_Female.isEnabled()) {
+					gender = "F";
+				} else {
+					gender = "M";
 				}
-				else {
-					gender="M";
+				if (radioBtn_user.isEnabled()) {
+					type = 1;
+				} else {
+					type = 2;
 				}
-				if(radioBtn_user.isEnabled()) {
-					type =1;
-				}
-				else {
-					type =2;
-				}
-				if(1==dao.join(txtfd_id.getText(), txtfd_pw.getText(), txtfd_name.getText(),
-						txtfd_registerNum_first.getText()+"-"+txtfd_registerNum_second.getText(),
-						gender, txtfd_phoneNum_first.getText()+"-"+txtfd_phoneNum_second.getText()+"-"+txtfd_phoneNum_third.getText(), type)) {
-					JOptionPane.showMessageDialog(null,	txtfd_name.getText()+"님 환영합니다.  (^v^)bb");
-				}else {
-					JOptionPane.showMessageDialog(null, "회원가입 실패 (-ㄴ-)","회원가입",JOptionPane.ERROR_MESSAGE);
+				if (1 == dao.join(txtfd_id.getText(), txtfd_pw.getText(), txtfd_name.getText(),
+						txtfd_registerNum_first.getText() + "-" + txtfd_registerNum_second.getText(), gender,
+						txtfd_phoneNum_first.getText() + "-" + txtfd_phoneNum_second.getText() + "-"
+								+ txtfd_phoneNum_third.getText(),
+						type)) {
+					JOptionPane.showMessageDialog(null, txtfd_name.getText() + "님 환영합니다.  (^v^)bb");
+				} else {
+					JOptionPane.showMessageDialog(null, "회원가입 실패 (-ㄴ-)", "회원가입", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});

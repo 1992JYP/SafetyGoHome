@@ -15,12 +15,15 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 
+@SuppressWarnings("unused")
 public class GUI_Frame_DEFEULT extends JFrame {
+	
+	
 	public GUI_Frame_DEFEULT() {
 		
 		
+		setBounds(100, 100, GUITest.SCREEN_WIDTH,GUITest.SCREEN_HEIGHT);
 		setTitle("프로그램");
-		setSize(GUITest.SCREEN_WIDTH,GUITest.SCREEN_HEIGHT);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

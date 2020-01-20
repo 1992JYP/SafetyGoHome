@@ -116,6 +116,10 @@ public class GUI_Accompany_Status extends JFrame {
 		panel_1.add(lbl_watching_start);
 		
 		JButton btn_match_finish = new JButton("\uB3C4\uCC29\uC644\uB8CC!");
+		btn_match_finish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_match_finish.setBounds(98, 572, 96, 34);
 		panel_1.add(btn_match_finish);
 		btn_match_finish.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));

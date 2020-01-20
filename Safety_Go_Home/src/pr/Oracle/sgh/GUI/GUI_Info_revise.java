@@ -6,6 +6,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import pr.Oracle.sgh.test.GUITest;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -18,18 +21,26 @@ public class GUI_Info_revise extends JFrame {
 	private JTextField txtfd_phoneNum_second;
 	private JTextField txtfd_phoneNum_first;
 	public GUI_Info_revise() {
+		setBounds(100, 100, GUITest.SCREEN_WIDTH,GUITest.SCREEN_HEIGHT);
+		setTitle("프로그램");
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		
 		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setLayout(null);
 		panel.setBackground(new Color(25, 25, 112));
-		panel.setBounds(14, 12, 472, 657);
+		panel.setBounds(0, 0, 472, 657);
 		getContentPane().add(panel);
+		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(14, 12, 442, 633);
+		panel_1.setBounds(14, 14, 444, 630);
 		panel.add(panel_1);
 		
 		JLabel lbl_signUp = new JLabel("\uD68C\uC6D0\uC815\uBCF4 \uC218\uC815");
@@ -45,7 +56,7 @@ public class GUI_Info_revise extends JFrame {
 		lbl_id.setBounds(83, 148, 62, 18);
 		panel_1.add(lbl_id);
 		
-		JLabel lbl_text_id = new JLabel("\uC544\uC774\uB514\uB0B4\uC6A9");
+		JLabel lbl_text_id = new JLabel(GUI_Main.user.getId());
 		lbl_text_id.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_text_id.setFont(new Font("경기천년제목 Light", Font.PLAIN, 15));
 		lbl_text_id.setBounds(159, 148, 62, 18);

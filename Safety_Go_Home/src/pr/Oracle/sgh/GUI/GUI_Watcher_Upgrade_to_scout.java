@@ -6,6 +6,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import pr.Oracle.sgh.test.GUITest;
+
 import java.awt.Panel;
 import java.awt.Choice;
 import javax.swing.JButton;
@@ -17,31 +20,41 @@ import javax.swing.JFormattedTextField;
 
 public class GUI_Watcher_Upgrade_to_scout extends JFrame {
 	public GUI_Watcher_Upgrade_to_scout() {
+	
+		
+		setTitle("프로그램");
+		setSize(GUITest.SCREEN_WIDTH, GUITest.SCREEN_HEIGHT);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+
 		getContentPane().setLayout(null);
-		
+
 		JPanel panel = new JPanel();
-		panel.setLayout(null);
 		panel.setBackground(new Color(25, 25, 112));
-		panel.setBounds(14, 12, 472, 657);
+		panel.setBounds(0, 0, 472, 657);
 		getContentPane().add(panel);
-		
-		JPanel pnl_upgrade = new JPanel();
-		pnl_upgrade.setLayout(null);
-		pnl_upgrade.setBackground(Color.WHITE);
-		pnl_upgrade.setBounds(14, 12, 442, 633);
-		panel.add(pnl_upgrade);
+		panel.setLayout(null);
+
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setBounds(14, 14, 444, 630);
+		panel.add(panel_1);
+
 		
 		JLabel label = new JLabel("\uBD09\uC0AC\uC790 \uB4F1\uAE09 \uC2E0\uCCAD");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setForeground(new Color(72, 61, 139));
 		label.setFont(new Font("경기천년제목 Bold", Font.BOLD, 50));
 		label.setBounds(26, 62, 391, 79);
-		pnl_upgrade.add(label);
+		panel_1.add(label);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
 		panel_2.setBounds(54, 164, 338, 142);
-		pnl_upgrade.add(panel_2);
+		panel_1.add(panel_2);
 		
 		Panel panel_3 = new Panel();
 		panel_3.setBackground(new Color(255, 222, 173));
@@ -82,23 +95,23 @@ public class GUI_Watcher_Upgrade_to_scout extends JFrame {
 		btn_upgrade.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		btn_upgrade.setBackground(new Color(123, 104, 238));
 		btn_upgrade.setBounds(119, 575, 85, 34);
-		pnl_upgrade.add(btn_upgrade);
+		panel_1.add(btn_upgrade);
 		
 		JButton btn_cancel = new JButton("\uCDE8\uC18C");
 		btn_cancel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		btn_cancel.setBackground(new Color(123, 104, 238));
 		btn_cancel.setBounds(234, 575, 85, 34);
-		pnl_upgrade.add(btn_cancel);
+		panel_1.add(btn_cancel);
 		
 		JLabel label_4 = new JLabel("\uBD09\uC0AC\uC790\uB85C \uB4F1\uAE09\uC744 \uC62C\uB9AC\uAE30 \uC704\uD574\uC11C\uB294 \uBC94\uC8C4\uACBD\uB825\uC5EC\uBD80\uB97C \uC99D\uBA85\uD574\uC8FC\uC138\uC694.");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setFont(new Font("경기천년제목 Light", Font.PLAIN, 15));
 		label_4.setBounds(52, 351, 354, 18);
-		pnl_upgrade.add(label_4);
+		panel_1.add(label_4);
 		
 		JPanel pnl_upload_file = new JPanel();
 		pnl_upload_file.setBounds(54, 420, 75, 26);
-		pnl_upgrade.add(pnl_upload_file);
+		panel_1.add(pnl_upload_file);
 		
 		JLabel label_7 = new JLabel("\uD30C\uC77C \uC120\uD0DD");
 		pnl_upload_file.add(label_7);
@@ -110,23 +123,23 @@ public class GUI_Watcher_Upgrade_to_scout extends JFrame {
 		upload_file_category.setFont(new Font("경기천년제목 Light", Font.PLAIN, 15));
 		upload_file_category.setText("\uC5C5\uB85C\uB4DC\uC2DC \uD30C\uC77C\uACBD\uB85C \uB728\uAE30");
 		upload_file_category.setBounds(131, 420, 199, 26);
-		pnl_upgrade.add(upload_file_category);
+		panel_1.add(upload_file_category);
 		
 		JButton btn_search_upload_file = new JButton("\uCC3E\uAE30");
 		btn_search_upload_file.setFont(new Font("경기천년제목 Light", Font.PLAIN, 15));
 		btn_search_upload_file.setBounds(331, 420, 61, 26);
-		pnl_upgrade.add(btn_search_upload_file);
+		panel_1.add(btn_search_upload_file);
 		
 		JLabel lbl_apply_for1 = new JLabel("\uC0C1\uD669\uC5D0 \uB530\uB77C \uB4F1\uAE09 \uC0C1\uD5A5\uAE4C\uC9C0 2~3\uC77C\uC774 \uAC78\uB9B4 \uC218 \uC788\uC2B5\uB2C8\uB2E4.");
 		lbl_apply_for1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_apply_for1.setFont(new Font("경기천년제목 Light", Font.PLAIN, 15));
 		lbl_apply_for1.setBounds(54, 492, 338, 18);
-		pnl_upgrade.add(lbl_apply_for1);
+		panel_1.add(lbl_apply_for1);
 		
 		JLabel lbl_apply_for2 = new JLabel("\uC2E0\uCCAD\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?");
 		lbl_apply_for2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_apply_for2.setFont(new Font("경기천년제목 Light", Font.PLAIN, 15));
 		lbl_apply_for2.setBounds(97, 532, 251, 18);
-		pnl_upgrade.add(lbl_apply_for2);
+		panel_1.add(lbl_apply_for2);
 	}
 }

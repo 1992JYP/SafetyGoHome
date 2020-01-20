@@ -5,10 +5,60 @@ import java.sql.SQLException;
 
 public class MemberDAO extends BaseDAO {
 
-	
-	
-	
-	
+	public int safetyStart(int type, String id) {
+
+		String sql = "INSERT INTO LOG (SERVICE_NUM, USER_ID) VALUES (LOG_SEQ.NEXTVAL , ?)";
+
+		if (type == 2) {
+			sql = "update LOG set watcher_id = ? where service_num=";
+		}
+		if (type == 3) {
+			sql = "update log set scout1_id = ?";
+		}
+
+		int cnt = 0;
+		getConnect();
+		try {
+
+			ps = conn.prepareStatement(sql); // sql에서 뭔가 오류가 날 수도 있으니까 try,catch문으로 감싸줌
+
+			cnt = ps.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return cnt;
+	}
+
+	private int getType(String id) {
+		int rtype = 0;
+		getConnect();
+		String sql = "select type from member where member_id = ? and islogined=1";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, id);
+
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				rtype = rs.getInt(1);
+			}
+
+		} catch (SQLException e) {
+
+		} finally {
+			disConnect();
+		}
+		return rtype;
+
+	}
+
+	private boolean getID() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	public int join(String id, String pw, String name, String registerNum, String gender, String phoneNum, int type) {
 
 		String id_check = checkId(id);
@@ -228,15 +278,15 @@ public class MemberDAO extends BaseDAO {
 	public MemberDTO Login(String id, String pw) {
 		MemberDTO result = null;
 		getConnect();
-		String sql = "update member set isLogin = '1' where member_id =? AND member_pw=?";
+		String sql = "update member set isLogined = '1' where member_id =? AND member_pw=?";
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, pw);
 			int cnt = ps.executeUpdate();
 			if (cnt > 0) {
-				rs = conn.createStatement().executeQuery(
-						String.format("select member_id, islogin, type, name from member where member_id = '%s'", id));
+				rs = conn.createStatement().executeQuery(String
+						.format("select member_id, islogined, type, name from member where member_id = '%s'", id));
 				while (rs.next()) {
 					String rmember_id = rs.getString(1);
 					boolean rislogined = rs.getBoolean(2);
@@ -246,12 +296,10 @@ public class MemberDAO extends BaseDAO {
 				}
 			}
 		} catch (SQLException e) {
-			System.err.println("sql문 확인1!");
-			e.printStackTrace();
+
 		} finally {
 			disConnect();
 		}
-		System.out.println("로그인성공");
 		return result;
 
 	}
@@ -297,7 +345,6 @@ public class MemberDAO extends BaseDAO {
 
 	}
 
-	
 //	public String getPhoneNum()
 
 }

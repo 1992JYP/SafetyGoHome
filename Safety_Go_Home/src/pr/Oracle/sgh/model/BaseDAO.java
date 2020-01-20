@@ -13,7 +13,7 @@ public class BaseDAO {
 	ResultSet rs = null;
 
 	public void getConnect() {
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String url = "jdbc:oracle:thin:@192.168.2.20:1521:XE";
 		String id = "hr";
 		String pw = "hr";
 
